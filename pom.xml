@@ -5,8 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.4.RELEASE</version>
-		<relativePath>../spring-boot-starters/spring-boot-starter-parent</relativePath>
+		<version>2.0.4.RELEASE</version>
 	</parent>
 
 	<groupId>com.mmc.boot.system</groupId>
@@ -14,15 +13,61 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<modules>
+		<module>spring-boot-simple</module>
+		<module>spring-boot-nosql-redis</module>
+		<module>spring-boot-dubbo-api</module>
+		<module>spring-boot-dubbo-provider</module>
+		<module>spring-boot-dubbo-consumer</module>
+	</modules>
+
 	<name>spring-boot-system</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.boot.dubbo.version>2.0.0</spring.boot.dubbo.version>
+		<zkclient.version>0.10</zkclient.version>
+		<boot.dubbo.api.version>1.0.0-SNAPSHOT</boot.dubbo.api.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.alibaba.spring.boot</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>${spring.boot.dubbo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mmc.boot.system.dubbo</groupId>
+				<artifactId>spring-boot-dubbo-api</artifactId>
+				<version>${boot.dubbo.api.version}</version>
+			</dependency>
+			<!--<dependency>-->
+				<!--<groupId>org.apache.curator</groupId>-->
+				<!--<artifactId>curator-framework</artifactId>-->
+				<!--<version>${curator-framework.version}</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>org.apache.zookeeper</groupId>-->
+				<!--<artifactId>zookeeper</artifactId>-->
+				<!--<version>${zookeeper.version}</version>-->
+			<!--</dependency>-->
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -127,8 +172,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	<modules>
-		<module>spring-boot-simple</module>
-		<module>spring-boot-nosql-redis</module>
-	</modules>
 </project>
