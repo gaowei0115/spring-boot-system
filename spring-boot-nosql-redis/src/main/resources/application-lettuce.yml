@@ -1,0 +1,14 @@
+# 采用lettuce模式配置redis
+spring:
+  redis:
+#    host:
+    password:
+    cluster:
+      nodes: 10.4.3.109:6379,10.4.3.109:6380
+      max-redirects: 3
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 10
+        min-idle: 5
+        max-wait: -1

@@ -4,6 +4,8 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.mmc.spring.boot.dubbo.api.IOrderService;
 import com.mmc.spring.boot.dubbo.provider.dao.OrderDao;
 import com.mmc.spring.boot.dubbo.domain.OrderEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,8 +25,12 @@ public class OrderService implements IOrderService{
     @Autowired
     private OrderDao orderDao;
 
+    private static final Logger log = LoggerFactory.getLogger(OrderService.class);
+
+
     @Override
     public List<OrderEntity> queryAllOrderInfo() {
+        log.debug("获取订单信息....");
         return orderDao.queryOrderInfos();
     }
 }

@@ -35,4 +35,56 @@
             <artifactId>spring-boot-dubbo-api</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>dubbo-provider</finalName>
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>application-${province.code}.properties</include>-->
+                    <!--<include>application.properties</include>-->
+                    <!--<include>**/*</include>-->
+                <!--</includes>-->
+                <!--<filtering>true</filtering>-->
+            <!--</resource>-->
+        <!--</resources>-->
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>80</port>
+                    <uriEncoding>utf-8</uriEncoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <!--如果想在没有web.xml文件的情况下构建WAR，请设置为false。-->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <!--<webResources>-->
+                    <!--<resource>-->
+                    <!--<directory>src/main/resources</directory>-->
+                    <!--<filtering>false</filtering>-->
+                    <!--</resource>-->
+                    <!--</webResources>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
