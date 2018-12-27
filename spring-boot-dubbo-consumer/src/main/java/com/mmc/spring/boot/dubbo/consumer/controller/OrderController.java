@@ -1,4 +1,4 @@
-package com.mmc.spring.boot.dubbo.provider.controller;
+package com.mmc.spring.boot.dubbo.consumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.mmc.spring.boot.dubbo.api.IOrderService;

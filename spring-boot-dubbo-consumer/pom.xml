@@ -18,7 +18,7 @@
             <artifactId>spring-boot-dubbo-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.spring.boot</groupId>
+            <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
         <dependency>

@@ -1,4 +1,4 @@
-package com.mmc.spring.boot.dubbo.provider.dao;
+package com.mmc.spring.boot.dubbo.consumer.dao;
 
 import com.mmc.spring.boot.dubbo.domain.OrderEntity;
 import org.springframework.stereotype.Repository;

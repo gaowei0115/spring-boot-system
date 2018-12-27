@@ -1,11 +1,10 @@
-package com.mmc.spring.boot.dubbo.provider;
+package com.mmc.spring.boot.dubbo.consumer;
 
-import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubboConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
  * @packageName：com.mmc.spring.boot.dubbo.provider
@@ -15,8 +14,14 @@ import org.springframework.context.annotation.ComponentScan;
  * @history: (version) author date desc
  */
 @SpringBootApplication
-@ComponentScan("com.mmc.spring.boot.dubbo.provider")
-public class ProviderApplication {
+@EnableDubbo
+public class ProviderApplication extends SpringBootServletInitializer{
+
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(ProviderApplication.class);
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(ProviderApplication.class, args);

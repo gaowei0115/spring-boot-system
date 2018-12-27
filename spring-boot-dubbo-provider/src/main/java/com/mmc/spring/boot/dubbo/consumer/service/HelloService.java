@@ -1,4 +1,4 @@
-package com.mmc.spring.boot.dubbo.provider.service;
+package com.mmc.spring.boot.dubbo.consumer.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.mmc.spring.boot.dubbo.api.IHelloService;

@@ -1,8 +1,8 @@
-package com.mmc.spring.boot.dubbo.provider.service;
+package com.mmc.spring.boot.dubbo.consumer.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.mmc.spring.boot.dubbo.api.IOrderService;
-import com.mmc.spring.boot.dubbo.provider.dao.OrderDao;
+import com.mmc.spring.boot.dubbo.consumer.dao.OrderDao;
 import com.mmc.spring.boot.dubbo.domain.OrderEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +31,7 @@ public class OrderService implements IOrderService{
     @Override
     public List<OrderEntity> queryAllOrderInfo() {
         log.debug("获取订单信息....");
+        System.out.println("获取订单信息....");
         return orderDao.queryOrderInfos();
     }
 }
