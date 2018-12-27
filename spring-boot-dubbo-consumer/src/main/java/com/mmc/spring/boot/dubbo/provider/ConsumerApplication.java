@@ -1,7 +1,7 @@
 package com.mmc.spring.boot.dubbo.provider;
 
-import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan("com.mmc.spring.boot.dubbo.provider")
 @SpringBootApplication
-@EnableDubboConfiguration
+@EnableAutoConfiguration
 public class ConsumerApplication {
 
     public static void main(String[] args) {
